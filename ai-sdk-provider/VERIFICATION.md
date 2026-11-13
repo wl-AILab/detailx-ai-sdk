@@ -9,6 +9,8 @@ Verified on 2026-11-13 with Node.js 22.23.1, AI SDK 7.0.169 and `@ai-sdk/provide
 - Received a quote of 2 credits for 720p with source frame rate preserved. An insufficient precharge budget was rejected before submission.
 - Started one paid task through `experimental_startVideo`, then ended the process after saving the operation and durable request state.
 - Installed both generated npm tarballs and AI SDK 7.0.169 into an independent project. A new process called `experimental_generateVideo` with the same business request ID and recovered the original generation.
+- After publishing, installed `@detailx/sdk@0.1.0` and `@detailx/ai-sdk-provider@0.1.0` directly from the npm registry in another independent project. Both registry package integrity values match the verified release tarballs. Main exports, the optional PostgreSQL export and AI SDK video entry points import successfully.
+- Repeated the recovery and download with the registry-installed packages. It returned the same generation and 1,432,552-byte MP4, with one billing transaction still settled at 2 credits; no additional generation was created.
 - Downloaded a 1,432,552-byte MP4 through `download: detailx.download`. Repeated submission of the persisted prepared request returned the same generation.
 - The corresponding generation had one billing transaction. Precharge and final settlement were both 2 credits.
 - Decoded the result with PyAV: 1280 x 720, 24 fps, 48 video frames, 2.0 seconds, one audio stream and 96,256 decoded audio samples including AAC padding. The first frame was nonblank.
