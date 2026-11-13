@@ -1,0 +1,21 @@
+{
+  "name": "@detailx/sdk",
+  "version": "0.1.0",
+  "description": "Durable quoted job client for the DetailX video API",
+  "homepage": "https://github.com/wl-AILab/detailx-ai-sdk/tree/main/sdk-typescript",
+  "repository": {"type": "git", "url": "git+https://github.com/wl-AILab/detailx-ai-sdk.git", "directory": "sdk-typescript"},
+  "bugs": {"url": "https://github.com/wl-AILab/detailx-ai-sdk/issues"},
+  "keywords": ["detailx", "video", "upscale", "super-resolution", "sdk"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}, "./postgres": {"types": "./dist/postgres.d.ts", "import": "./dist/postgres.js"}},
+  "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
+  "scripts": {"build": "tsc -p tsconfig.json", "check": "tsc -p tsconfig.json --noEmit", "test": "vitest run", "prepack": "npm run build"},
+  "engines": {"node": ">=20.3"},
+  "license": "MIT",
+  "devDependencies": {"@types/node": "^24.0.0", "typescript": "^5.9.0", "vitest": "^4.0.0", "pg": "^8.16.0", "@types/pg": "^8.15.0"},
+  "peerDependencies": {"pg": "^8.16.0"},
+  "peerDependenciesMeta": {"pg": {"optional": true}},
+  "publishConfig": {"access": "public"}
+}

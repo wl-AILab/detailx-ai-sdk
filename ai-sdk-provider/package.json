@@ -1,0 +1,21 @@
+{
+  "name": "@detailx/ai-sdk-provider",
+  "version": "0.1.0",
+  "description": "DetailX video super-resolution provider for AI SDK 7",
+  "homepage": "https://github.com/wl-AILab/detailx-ai-sdk/tree/main/ai-sdk-provider",
+  "repository": {"type": "git", "url": "git+https://github.com/wl-AILab/detailx-ai-sdk.git", "directory": "ai-sdk-provider"},
+  "bugs": {"url": "https://github.com/wl-AILab/detailx-ai-sdk/issues"},
+  "keywords": ["ai", "ai-sdk", "detailx", "video", "upscale", "super-resolution", "vercel"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}},
+  "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE", "examples"],
+  "scripts": {"build": "tsc -p tsconfig.json", "check": "tsc -p tsconfig.json --noEmit", "test": "vitest run", "prepack": "npm run build"},
+  "dependencies": {"@detailx/sdk": "0.1.0", "@ai-sdk/provider": "4.0.37"},
+  "peerDependencies": {"ai": ">=7.0.169 <8"},
+  "devDependencies": {"ai": "7.0.169", "@types/node": "^24.0.0", "typescript": "^5.9.0", "vitest": "^4.0.0"},
+  "engines": {"node": ">=20.3"},
+  "license": "MIT",
+  "publishConfig": {"access": "public"}
+}
